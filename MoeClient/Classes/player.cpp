@@ -19,10 +19,10 @@ player::player(string uname,string mod,int px,int py,CCLayer* p)
 }
 void player::showplayer()
 {
-	CCAnimation* animation1 = CCAnimation::animation();
-	CCAnimation* animation2 = CCAnimation::animation();
-	CCAnimation* animation3 = CCAnimation::animation();
-	CCAnimation* animation4 = CCAnimation::animation();
+	CCAnimation* animation1 = CCAnimation::create();
+	CCAnimation* animation2 = CCAnimation::create();
+	CCAnimation* animation3 = CCAnimation::create();
+	CCAnimation* animation4 = CCAnimation::create();
     char frameName[100] = {0};
 	int k=0;
 	//读取图片创建动画
@@ -32,34 +32,38 @@ void player::showplayer()
 		if(i>=4)
 			k=i-4;
 		sprintf(frameName, ("image//player//"+playermod+"//down%d.png").c_str(), k+1);
-        animation1->addFrameWithFileName(frameName);
+		animation1->addSpriteFrameWithFile(frameName);
         sprintf(frameName, ("image//player//"+playermod+"//left%d.png").c_str(), k+1);
-        animation2->addFrameWithFileName(frameName);
+		animation2->addSpriteFrameWithFile(frameName);
         sprintf(frameName, ("image//player//"+playermod+"//right%d.png").c_str(), k+1);
-        animation3->addFrameWithFileName(frameName);
+		animation3->addSpriteFrameWithFile(frameName);
         sprintf(frameName, ("image//player//"+playermod+"//up%d.png").c_str(), k+1);
-        animation4->addFrameWithFileName(frameName);
+		animation4->addSpriteFrameWithFile(frameName);
     }
 	//初始化四个方向的移动动画
-    CCActionInterval*  action1 = CCAnimate::actionWithDuration(1, animation1,true);
+    CCActionInterval*  action1 = CCAnimate::create(animation1);
+	action1->setDuration(1.0f);
 	CCActionInterval*  action1_back = action1->reverse();
-    CCActionInterval*  action2 = CCAnimate::actionWithDuration(1, animation2,true);
-	CCActionInterval*  action2_back = action1->reverse();
-    CCActionInterval*  action3 = CCAnimate::actionWithDuration(1, animation3,true);
-	CCActionInterval*  action3_back = action1->reverse();
-    CCActionInterval*  action4 = CCAnimate::actionWithDuration(1, animation4,true);
-	CCActionInterval*  action4_back = action1->reverse();
+	CCActionInterval*  action2 = CCAnimate::create(animation1);
+	action2->setDuration(1.0f);
+	CCActionInterval*  action2_back = action2->reverse();
+	CCActionInterval*  action3 = CCAnimate::create(animation1);
+	action3->setDuration(1.0f);
+	CCActionInterval*  action3_back = action3->reverse();
+	CCActionInterval*  action4 = CCAnimate::create(animation1);
+	action4->setDuration(1.0f);
+	CCActionInterval*  action4_back = action4->reverse();
 	//设定四个方向的重复移动动画
-	movedown=CCRepeatForever::actionWithAction(action1);
-	moveleft=CCRepeatForever::actionWithAction(action2);
-	moveright=CCRepeatForever::actionWithAction(action3);
-	moveup=CCRepeatForever::actionWithAction(action4);
+	movedown=CCRepeatForever::create(action1);
+	moveleft = CCRepeatForever::create(action2);
+	moveright = CCRepeatForever::create(action3);
+	moveup = CCRepeatForever::create(action4);
 	//初始化图片
-	player0 = CCSprite::spriteWithFile(("image//player//"+playermod+"//down1.png").c_str(),CCRectMake(0, 0, 100, 100) );
-	player1 = CCSprite::spriteWithFile(("image//player//"+playermod+"//down1.png").c_str(),CCRectMake(0, 0, 100, 100) );
-	player2 = CCSprite::spriteWithFile(("image//player//"+playermod+"//down1.png").c_str(),CCRectMake(0, 0, 100, 100) );
-	player3 = CCSprite::spriteWithFile(("image//player//"+playermod+"//down1.png").c_str(),CCRectMake(0, 0, 100, 100) );
-	player4 = CCSprite::spriteWithFile(("image//player//"+playermod+"//down1.png").c_str(),CCRectMake(0, 0, 100, 100) );
+	player0 = CCSprite::create(("image//player//"+playermod+"//down1.png").c_str(),CCRectMake(0, 0, 100, 100) );
+	player1 = CCSprite::create(("image//player//" + playermod + "//down1.png").c_str(), CCRectMake(0, 0, 100, 100));
+	player2 = CCSprite::create(("image//player//" + playermod + "//down1.png").c_str(), CCRectMake(0, 0, 100, 100));
+	player3 = CCSprite::create(("image//player//" + playermod + "//down1.png").c_str(), CCRectMake(0, 0, 100, 100));
+	player4 = CCSprite::create(("image//player//" + playermod + "//down1.png").c_str(), CCRectMake(0, 0, 100, 100));
 	//设定初始坐标
 	player0->setPosition( ccp(positionX,positionY));
 	player1->setPosition( ccp(positionX,positionY));
@@ -81,30 +85,30 @@ void player::showplayer()
 }
 void player::change()
 {
-	player0->setIsVisible(false);
-	player1->setIsVisible(false);
-	player2->setIsVisible(false);
-	player3->setIsVisible(false);
-	player4->setIsVisible(false);
+	player0->setVisible(false);
+	player1->setVisible(false);
+	player2->setVisible(false);
+	player3->setVisible(false);
+	player4->setVisible(false);
 	switch(faceto)
 	{
 	case 0:
-		player0->setIsVisible(true);
+		player0->setVisible(true);
 		break;
 	case 1:
-		player1->setIsVisible(true);
+		player1->setVisible(true);
 		break;
 	case 2:
-		player2->setIsVisible(true);
+		player2->setVisible(true);
 		break;
 	case 3:
-		player3->setIsVisible(true);
+		player3->setVisible(true);
 		break;
 	case 4:
-		player4->setIsVisible(true);
+		player4->setVisible(true);
 		break;
 	default:
-		player0->setIsVisible(true);
+		player0->setVisible(true);
 	}
 }
 void player::move(int nx,int ny,bool die)
@@ -115,7 +119,7 @@ void player::move(int nx,int ny,bool die)
 	{
 		faceto=-1;
 		change();
-		player0->setIsVisible(false);
+		player0->setVisible(false);
 	}
 	else{
 		newX=nx;
@@ -159,7 +163,7 @@ void player::checkface()
 void player::showname()
 {
 	CCSize mysize=CCSize(100,15);
-	CCLabelTTF* pname = CCLabelTTF::labelWithString(username.c_str(),mysize,CCTextAlignmentLeft,"Thonburi",14);
+	CCLabelTTF* pname = CCLabelTTF::create(username.c_str(), "Thonburi", 14, mysize, TextHAlignment::LEFT);
 	pname->setPosition(ccp(positionX,positionY));
 	parent->addChild(pname);
 }

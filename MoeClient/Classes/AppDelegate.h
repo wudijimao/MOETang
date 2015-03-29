@@ -1,14 +1,14 @@
 #ifndef __APP_DELEGATE_H__
 #define __APP_DELEGATE_H__
 
-#include "CCApplication.h"
+#include "cocos2d.h"
 
 /**
 @brief	The cocos2d Application.
 
 The reason for implement as private inheritance is to hide some interface call by CCDirector.
 */
-class  AppDelegate : private cocos2d::CCApplication
+class  AppDelegate : private cocos2d::Application
 {
 public:
     AppDelegate();
@@ -17,7 +17,7 @@ public:
     /**
     @brief	Implement for initialize OpenGL instance, set source path, etc...
     */
-    virtual bool initInstance();
+	void initGLContextAttrs();
 
     /**
     @brief	Implement CCDirector and CCScene init code here.

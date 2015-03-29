@@ -54,7 +54,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;.\win32;.\Classes;..\cocos2dx;..\cocos2dx\include;..\cocos2dx\platform;..\cocos2dx\platform\third_party\win32\OGLES;..\;..\CocosDenshion\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cocos\cocos2d-x-3.4\cocos;D:\Cocos\cocos2d-x-3.4\external\win32-specific\gles\include\OGLES;D:\program\OO堂\Classes;D:\Cocos\cocos2d-x-3.4\external\glfw3\include\win32;D:\Cocos\cocos2d-x-3.4\external\;D:\Cocos\cocos2d-x-3.4\cocos\audio\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>

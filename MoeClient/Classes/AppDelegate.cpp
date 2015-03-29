@@ -6,7 +6,6 @@ using namespace CocosDenshion;
 
 #include "login.h"
 
-#include "CCEGLView.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate()
@@ -18,84 +17,15 @@ AppDelegate::~AppDelegate()
     SimpleAudioEngine::end();
 }
 
-bool AppDelegate::initInstance()
+//if you want a different context,just modify the value of glContextAttrs
+//it will takes effect on all platforms
+void AppDelegate::initGLContextAttrs()
 {
-    bool bRet = false;
-    do
-    {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+	//set OpenGL context attributions,now can only set six attributions:
+	//red,green,blue,alpha,depth,stencil
+	GLContextAttrs glContextAttrs = { 8, 8, 8, 8, 24, 8 };
 
-		// Initialize OpenGLView instance, that release by CCDirector when application terminate.
-		// The HelloWorld is designed as HVGA.
-		CCEGLView * pMainWnd = new CCEGLView();
-		CC_BREAK_IF(! pMainWnd
-				|| ! pMainWnd->Create(TEXT("cocos2d: mytest"), 800, 600));
-
-#endif  // CC_PLATFORM_WIN32
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-
-        // OpenGLView initialized in testsAppDelegate.mm on ios platform, nothing need to do here.
-
-#endif  // CC_PLATFORM_IOS
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-
-		// OpenGLView initialized in HelloWorld/android/jni/helloworld/main.cpp
-		// the default setting is to create a fullscreen view
-		// if you want to use auto-scale, please enable view->create(320,480) in main.cpp
-		// if the resources under '/sdcard" or other writeable path, set it.
-		// warning: the audio source should in assets/
-		// cocos2d::CCFileUtils::setResourcePath("/sdcard");
-
-#endif  // CC_PLATFORM_ANDROID
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WOPHONE)
-
-		// Initialize OpenGLView instance, that release by CCDirector when application terminate.
-		// The HelloWorld is designed as HVGA.
-		CCEGLView* pMainWnd = new CCEGLView(this);
-		CC_BREAK_IF(! pMainWnd || ! pMainWnd->Create(320,480, WM_WINDOW_ROTATE_MODE_CW));
-
-#ifndef _TRANZDA_VM_
-		// on wophone emulator, we copy resources files to Work7/NEWPLUS/TDA_DATA/Data/ folder instead of zip file
-		cocos2d::CCFileUtils::setResource("HelloWorld.zip");
-#endif
-
-#endif  // CC_PLATFORM_WOPHONE
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_MARMALADE)
-		// MaxAksenov said it's NOT a very elegant solution. I agree, haha
-		CCDirector::sharedDirector()->setDeviceOrientation(kCCDeviceOrientationLandscapeLeft);
-#endif
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-
-		// Initialize OpenGLView instance, that release by CCDirector when application terminate.
-		// The HelloWorld is designed as HVGA.
-		CCEGLView * pMainWnd = new CCEGLView();
-		CC_BREAK_IF(! pMainWnd
-				|| ! pMainWnd->Create("cocos2d: Hello World", 800, 480,480, 320));
-
-		CCFileUtils::setResourcePath("../Resource/");
-
-#endif  // CC_PLATFORM_LINUX
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_BADA)
-
-		CCEGLView * pMainWnd = new CCEGLView();
-		CC_BREAK_IF(! pMainWnd|| ! pMainWnd->Create(this, 480, 320));
-		pMainWnd->setDeviceOrientation(Osp::Ui::ORIENTATION_LANDSCAPE);
-		CCFileUtils::setResourcePath("/Res/");
-
-#endif  // CC_PLATFORM_BADA
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_QNX)
-		CCEGLView * pMainWnd = new CCEGLView();
-		CC_BREAK_IF(! pMainWnd|| ! pMainWnd->Create(480, 320));
-		CCFileUtils::setResourcePath("./app/native/Resource");
-#endif // CC_PLATFORM_QNX
-		bRet = true;
-	} while (0);
-	return bRet;
+	GLView::setGLContextAttrs(glContextAttrs);
 }
 
 bool AppDelegate::applicationDidFinishLaunching()
