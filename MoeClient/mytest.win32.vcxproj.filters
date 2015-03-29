@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{a15a89d5-6679-4c23-b052-90b7760ddfd2}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{2e39ea43-3665-4c71-93df-2c130581889b}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{024b01d9-cd97-4805-bc27-33e35b15b271}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="win32\res\mytest.ico">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\music\das.mp3" />
+    <None Include="Resources\music\M09.mp3" />
+    <None Include="Resources\sound\uiLeave.wav" />
+    <None Include="Resources\fonts\A Damn Mess.ttf" />
+    <None Include="Resources\fonts\Abberancy.ttf" />
+    <None Include="Resources\fonts\Abduction.ttf" />
+    <None Include="Resources\fonts\American Typewriter.ttf" />
+    <None Include="Resources\fonts\arial.ttf" />
+    <None Include="Resources\fonts\arial16.fnt" />
+    <None Include="Resources\fonts\arial16.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\bitmapFontChinese.fnt" />
+    <None Include="Resources\fonts\bitmapFontChinese.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\bitmapFontTest.fnt" />
+    <None Include="Resources\fonts\bitmapFontTest.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\bitmapFontTest2.fnt" />
+    <None Include="Resources\fonts\bitmapFontTest2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\bitmapFontTest3.fnt" />
+    <None Include="Resources\fonts\bitmapFontTest3.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\bitmapFontTest4.fnt" />
+    <None Include="Resources\fonts\bitmapFontTest4.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\bitmapFontTest5.fnt" />
+    <None Include="Resources\fonts\bitmapFontTest5.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\Courier New.ttf" />
+    <None Include="Resources\fonts\fps_images.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\fps_images-hd.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\futura-48.fnt" />
+    <None Include="Resources\fonts\futura-48.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\konqa32.fnt" />
+    <None Include="Resources\fonts\konqa32.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\konqa32-hd.fnt" />
+    <None Include="Resources\fonts\konqa32-hd.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\larabie-16.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\larabie-16-hd.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\Marker Felt.ttf" />
+    <None Include="Resources\fonts\Paint Boy.ttf" />
+    <None Include="Resources\fonts\Schwarzwald Regular.ttf" />
+    <None Include="Resources\fonts\Scissor Cuts.ttf" />
+    <None Include="Resources\fonts\tahoma.ttf" />
+    <None Include="Resources\fonts\Thonburi.ttf" />
+    <None Include="Resources\fonts\ThonburiBold.ttf" />
+    <None Include="Resources\fonts\tuffy_bold_italic-charmap.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\fonts\tuffy_bold_italic-charmap-hd.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\roomclass\001.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\form\ca_main.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\form\message.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\form\Login_con.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\form\login_main.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\form\cr_main.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\form\room.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\ca_exit.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\ca_exit_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\ca_option.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\ca_option_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_createroom.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_createroom_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_fastjoin.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_fastjoin_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_userinfo.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_userinfo_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\Login_con_close.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\Login_con_close_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\login_exit.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\login_exit_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\login_login.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\login_login_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\message_close.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\message_close_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\music\M10.mp3" />
+    <None Include="Resources\image\form\ad.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\form\room_empty.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\others\1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\others\Input.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\others\2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\others\3.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\others\4.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\others\5.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\others\choosearea.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\others\delay.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_rightpage_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_leftpage.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_leftpage_disabled.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_leftpage_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_rightpage.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_rightpage_disabled.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\form\enterroom_main.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\enterroom_start.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\enterroom_start_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\1main.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\down1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\down2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\down3.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\down4.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\left1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\left2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\left3.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\left4.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\right1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\right2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\right3.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\right4.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\up1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\up2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\up3.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\1\up4.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\down1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\down2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\down3.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\down4.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\left1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\left2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\left3.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\left4.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\right1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\right2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\right3.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\right4.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\up1.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\up2.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\up3.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\player\0\up4.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\form\game_main.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\Determine.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\Determine_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\enterroom_start_disable.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\bomb.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\colorstone.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\firebuttom.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\fireleft.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\firelr.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\firemid.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\fireright.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\firetb.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\firetop.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\graystone.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\main.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\orangeblock.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\redblock.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\tree.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\map\1\water.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\music\1.mp3" />
+    <None Include="Resources\image\form\userinfo.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\form\userlabel_main.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\turnoffmusic.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\turnoffmusic_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\turnoffsound.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\turnoffsound_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\turnonmusic.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\turnonmusic_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\turnonsound.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\turnonsound_selected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\form\time_label.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Classes\server.ini" />
+    <None Include="Resources\image\button\cr_newgame.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\image\button\cr_newgame_selected.png">
+      <Filter>resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="win32\mytest.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="win32\resource.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\main.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\AppDelegate.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\login.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\MessageStruct.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\MOEClient.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\message.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\ca.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\cr.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\Global variables.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\game.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\player.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\enterroom.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\startgame.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\my_Input.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\defines.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\mapread.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\mymap.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\getMOEServer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="win32\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\AppDelegate.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\login.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\message.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\ca.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\cr.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\player.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\enterroom.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\startgame.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\mapread.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\mymap.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\GetMOEServer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
