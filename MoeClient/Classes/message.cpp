@@ -36,7 +36,7 @@ void message::showmessage()
 	pmsgCloseItem->setPosition(ccp(X-4,Y-133));
 	//添加菜单至界面中
 	CCMenu* pmsgCloseMenu = CCMenu::create(pmsgCloseItem, NULL);
-    pmsgCloseMenu->setPosition(CCPointZero);
+    pmsgCloseMenu->setPosition(Point::ZERO);
     this->addChild(pmsgCloseMenu);
 	//设置提示信息框大小
 	CCSize mysize=CCSize(300,200);

@@ -107,7 +107,7 @@ void startgame::showmain()
 	pexitItem->setPosition(ccp(760,22+23));
 	//添加菜单至界面中
 	CCMenu* pexitMenu = CCMenu::create(pexitItem, NULL);
-    pexitMenu->setPosition(CCPointZero);
+    pexitMenu->setPosition(Point::ZERO);
 	this->addChild(pexitMenu);
 	if(turnonmusic1==true)
 		CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic(("music\\"+inttostr(ohm.MapType)+".mp3").c_str(), true);

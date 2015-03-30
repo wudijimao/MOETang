@@ -28,7 +28,7 @@ void ca::showca()
 	pcaExitItem->setPosition(ccp(743,56));
 	//添加菜单至界面中
 	CCMenu* pcaExitMenu = CCMenu::create(pcaExitItem, NULL);
-    pcaExitMenu->setPosition(CCPointZero);
+	pcaExitMenu->setPosition(Point::ZERO);
     this->addChild(pcaExitMenu);
 	//创建系统设置按钮图片
 	CCMenuItemImage *pcaOptionItem=CCMenuItemImage::create(
@@ -37,7 +37,7 @@ void ca::showca()
 	pcaOptionItem->setPosition(ccp(602,59));
 	//添加菜单至界面中
 	CCMenu* pcaOptionMenu = CCMenu::create(pcaOptionItem, NULL);
-    pcaOptionMenu->setPosition(CCPointZero);
+	pcaOptionMenu->setPosition(Point::ZERO);
     this->addChild(pcaOptionMenu);
 	showbutton4();
 }
@@ -72,7 +72,7 @@ void ca::showclick()
 		}
 		//添加菜单至界面中
 		pcachooseMenu[i] = CCMenu::create(pcachooseItem[i], NULL);
-		(pcachooseMenu[i])->setPosition(CCPointZero);
+		(pcachooseMenu[i])->setPosition(Point::ZERO);
 		this->addChild(pcachooseMenu[i]);
 	}
 }
@@ -202,27 +202,27 @@ void ca::showbutton4()
 	pItem1->setPosition(ccp(405,59));
 	//添加菜单至界面中
 	CCMenu* pMenu1 = CCMenu::create(pItem1, NULL);
-    pMenu1->setPosition(CCPointZero);
+	pMenu1->setPosition(Point::ZERO);
     this->addChild(pMenu1);
 
 	CCMenuItemImage *pItem2 = CCMenuItemImage::create(
 		"image\\button\\turnoffsound.png","image\\button\\turnoffsound_selected.png",this,menu_selector(ca::ShowMenu2));
 	pItem2->setPosition(ccp(471,59));
 	CCMenu* pMenu2 = CCMenu::create(pItem2, NULL);
-    pMenu2->setPosition(CCPointZero);
+	pMenu2->setPosition(Point::ZERO);
     this->addChild(pMenu2);
 
 	CCMenuItemImage *pItem3 = CCMenuItemImage::create(
 		"image\\button\\turnonmusic.png","image\\button\\turnonmusic_selected.png",this,menu_selector(ca::ShowMenu3));
 	pItem3->setPosition(ccp(535,59));
 	CCMenu* pMenu3 = CCMenu::create(pItem3, NULL);
-    pMenu3->setPosition(CCPointZero);
+	pMenu3->setPosition(Point::ZERO);
     this->addChild(pMenu3);
 
 	CCMenuItemImage *pItem4 = CCMenuItemImage::create(
 		"image\\button\\turnoffmusic.png","image\\button\\turnoffmusic_selected.png",this,menu_selector(ca::ShowMenu4));
 	pItem4->setPosition(ccp(602,59));
 	CCMenu* pMenu4 = CCMenu::create(pItem4, NULL);
-    pMenu4->setPosition(CCPointZero);
+	pMenu4->setPosition(Point::ZERO);
     this->addChild(pMenu4);
 }

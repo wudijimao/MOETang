@@ -94,7 +94,7 @@ void cr::addroom()
 		}
 		//将按钮作为菜单添加到LAYER中
 		pcrchooseMenu[i] = CCMenu::create(pcrchooseItem[i], NULL);
-		(pcrchooseMenu[i])->setPosition(CCPointZero);
+		(pcrchooseMenu[i])->setPosition(Point::ZERO);
 		this->addChild(pcrchooseMenu[i]);
 	}
 }
@@ -108,7 +108,7 @@ void cr::showpage()
 	pleftpageimg->setPosition(ccp(348,30));
 	//添加菜单至界面中
 	CCMenu* pleftpagemenu = CCMenu::create(pleftpageimg, NULL);
-    pleftpagemenu->setPosition(CCPointZero);
+	pleftpagemenu->setPosition(Point::ZERO);
     this->addChild(pleftpagemenu);
 
 	//创建右翻页按钮图片
@@ -118,7 +118,7 @@ void cr::showpage()
 	prightpageimg->setPosition(ccp(383,30));
 	//添加菜单至界面中
 	CCMenu* prightpagemenu = CCMenu::create(prightpageimg, NULL);
-    prightpagemenu->setPosition(CCPointZero);
+	prightpagemenu->setPosition(Point::ZERO);
     this->addChild(prightpagemenu);
 
 	if(page==0)
@@ -145,7 +145,7 @@ void cr::showbutton5()
 	pntItem->setPosition(ccp(531,33));
 	//添加菜单至界面中
 	CCMenu* pntMenu = CCMenu::create(pntItem, NULL);
-    pntMenu->setPosition(CCPointZero);
+	pntMenu->setPosition(Point::ZERO);
     this->addChild(pntMenu);
 	//创建快速加入按钮
 	CCMenuItemImage *pfjItem = CCMenuItemImage::create(
@@ -154,7 +154,7 @@ void cr::showbutton5()
 	pfjItem->setPosition(ccp(586,33));
 	//添加菜单至界面中
 	CCMenu* pfjMenu = CCMenu::create(pfjItem, NULL);
-    pfjMenu->setPosition(CCPointZero);
+	pfjMenu->setPosition(Point::ZERO);
     this->addChild(pfjMenu);
 
 	//创建创建房间按钮
@@ -164,7 +164,7 @@ void cr::showbutton5()
 	pcrItem->setPosition(ccp(641,33));
 	//添加菜单至界面中
 	CCMenu* pcrMenu = CCMenu::create(pcrItem, NULL);
-    pcrMenu->setPosition(CCPointZero);
+	pcrMenu->setPosition(Point::ZERO);
     this->addChild(pcrMenu);
 
 	//创建个人信息按钮
@@ -174,7 +174,7 @@ void cr::showbutton5()
 	puiItem->setPosition(ccp(696,33));
 	//添加菜单至界面中
 	CCMenu* puiMenu = CCMenu::create(puiItem, NULL);
-    puiMenu->setPosition(CCPointZero);
+	puiMenu->setPosition(Point::ZERO);
     this->addChild(puiMenu);
 
 	//创建退出按钮
@@ -184,7 +184,7 @@ void cr::showbutton5()
 	pexitItem->setPosition(ccp(761,33));
 	//添加菜单至界面中
 	CCMenu* pexitMenu = CCMenu::create(pexitItem, NULL);
-    pexitMenu->setPosition(CCPointZero);
+	pexitMenu->setPosition(Point::ZERO);
     this->addChild(pexitMenu);
 
 }

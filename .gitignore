@@ -28,3 +28,6 @@
 *.app
 *.sdf
 *.suo
+/MoeClient/mytest.win32.v12.suo
+/MoeClient/mytest.win32.opensdf
+/MoeClient/mytest.win32.sdf

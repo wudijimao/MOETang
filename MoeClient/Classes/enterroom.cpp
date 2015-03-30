@@ -105,7 +105,7 @@ void enterroom::showbutton()
 	pstartItem->setPosition(ccp(600,45));
 	//添加菜单至界面中
 	CCMenu* pstartMenu = CCMenu::create(pstartItem, NULL);
-    pstartMenu->setPosition(CCPointZero);
+	pstartMenu->setPosition(Point::ZERO);
     this->addChild(pstartMenu);
 	//创建退出按钮图片
 	CCMenuItemImage *pexitItem = CCMenuItemImage::create(
@@ -114,7 +114,7 @@ void enterroom::showbutton()
 	pexitItem->setPosition(ccp(740,45));
 	//添加菜单至界面中
 	CCMenu* pexitMenu = CCMenu::create(pexitItem, NULL);
-    pexitMenu->setPosition(CCPointZero);
+	pexitMenu->setPosition(Point::ZERO);
     this->addChild(pexitMenu);
 	//房间名称及房间号显示
 	CCSize roomdirsize=CCSize(104,17);
@@ -153,7 +153,7 @@ void enterroom::showbutton()
 		penterItem->setPosition(ccp(720,600-325));
 		//添加菜单至界面中
 		CCMenu* penterMenu = CCMenu::create(penterItem, NULL);
-		penterMenu->setPosition(CCPointZero);
+		penterMenu->setPosition(Point::ZERO);
 		this->addChild(penterMenu);
 	}
 }

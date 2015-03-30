@@ -14,11 +14,12 @@ CCScene* login::scene()
     do 
     {
         // 'scene' is an autorelease object
-        scene = CCScene::node();
+        scene = CCScene::create();
         CC_BREAK_IF(! scene);
 
         // 'layer' is an autorelease object
-        login *layer = login::node();
+		//TODO:检查是否调用了正确的Create？？
+        auto *layer = login::create();
         CC_BREAK_IF(! layer);
 
         // add layer as a child to scene
@@ -75,7 +76,7 @@ bool login::init()
 		pLoginExitItem->setPosition(ccp(731,212));
 		//添加菜单至界面中
 		CCMenu* pLoginExitMenu = CCMenu::create(pLoginExitItem, NULL);
-        pLoginExitMenu->setPosition(CCPointZero);
+		pLoginExitMenu->setPosition(Point::ZERO);
         CC_BREAK_IF(! pLoginExitMenu);
         this->addChild(pLoginExitMenu, 1);
 		//创建登录按钮图片
@@ -86,7 +87,7 @@ bool login::init()
 		pLoginLoginItem->setPosition(ccp(665,212));
 		//添加菜单至界面中
 		CCMenu* pLoginLoginMenu = CCMenu::create(pLoginLoginItem, NULL);
-        pLoginLoginMenu->setPosition(CCPointZero);
+		pLoginLoginMenu->setPosition(Point::ZERO);
         CC_BREAK_IF(! pLoginLoginMenu);
         this->addChild(pLoginLoginMenu, 2);
 		//设定输入框大小
@@ -104,7 +105,7 @@ bool login::init()
 			"image\\others\\Input.png","image\\others\\Input.png",this,menu_selector(login::chooseQQ));
 		pLoginQQItem->setPosition(ccp(640,370));
 		CCMenu* pQQItemMenu = CCMenu::create(pLoginQQItem, NULL);
-        pQQItemMenu->setPosition(CCPointZero);
+		pQQItemMenu->setPosition(Point::ZERO);
         this->addChild(pQQItemMenu);
 		//设定QQ号输入框位置，获取焦点并添入界面中
 		pLoginQQInput->setPosition(ccp(640,370));
@@ -117,7 +118,7 @@ bool login::init()
 		CCMenuItemImage *pLoginPWItem = CCMenuItemImage::create(
 			"image\\others\\Input.png","image\\others\\Input.png",this,menu_selector(login::choosePW));
 		CCMenu* pPWItemMenu = CCMenu::create(pLoginPWItem, NULL);
-        pPWItemMenu->setPosition(CCPointZero);
+		pPWItemMenu->setPosition(Point::ZERO);
         this->addChild(pPWItemMenu);
 		pLoginPWItem->setPosition(ccp(640,325));
 		pLoginPWInput->setPosition(ccp(640,325));
@@ -216,6 +217,6 @@ void login::showconview()
 	pLoginConItem->setPosition(ccp(400,273));
 	//添加菜单至界面中
 	pLoginConClose = CCMenu::create(pLoginConItem, NULL);
-    pLoginConClose->setPosition(CCPointZero);
+	pLoginConClose->setPosition(Point::ZERO);
     this->addChild(pLoginConClose);
 }
