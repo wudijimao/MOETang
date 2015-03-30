@@ -15,7 +15,7 @@ public:
 	void showplayers();
 	void showplayername();
 	void showbutton();
-	void update(cocos2d::ccTime dt);
+	void update(float delta);
 	virtual void start(cocos2d::CCObject* pSender);
 	virtual void exitgame(cocos2d::CCObject* pSender);
 	virtual void changeroomname(cocos2d::CCObject* pSender);

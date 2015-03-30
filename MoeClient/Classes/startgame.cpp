@@ -79,7 +79,7 @@ startgame::startgame(ServerMessage sm,ClientMapMessage incmm,oneHouseMessage ino
 void startgame::showmain()
 {
 	mysm=gameserver;
-	CCSprite* pgameMain=CCSprite::spriteWithFile("image\\form\\game_main.png");
+	CCSprite* pgameMain = CCSprite::create("image\\form\\game_main.png");
     pgameMain->setPosition(ccp(400,300));
 	this->addChild(pgameMain);
 	for(int i=0;i<8;i++)
@@ -92,7 +92,7 @@ void startgame::showmain()
 		this->addChild(playerlabel[i]);
 	}
 	CCSize roomlabelsize=CCSize(104,20);
-	CCLabelTTF*	rmlabel = CCLabelTTF::labelWithString(roomname.c_str(),roomlabelsize,CCTextAlignmentLeft,"arial",15);
+	CCLabelTTF*	rmlabel = CCLabelTTF::create(roomname.c_str(), "arial", 15, roomlabelsize, TextHAlignment::LEFT);
 	rmlabel->setPosition(ccp(780,580));
 	this->addChild(rmlabel);
 	showmap();
@@ -101,12 +101,12 @@ void startgame::showmain()
 	this->schedule( schedule_selector(startgame::update) );
 
 	//创建退出按钮图片
-	CCMenuItemImage *pexitItem=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pexitItem = CCMenuItemImage::create(
 		"image\\button\\ca_exit.png","image\\button\\ca_exit_selected.png",this,menu_selector(startgame::exitgame));
 	//设置退出按钮位置
 	pexitItem->setPosition(ccp(760,22+23));
 	//添加菜单至界面中
-	CCMenu* pexitMenu = CCMenu::menuWithItems(pexitItem, NULL);
+	CCMenu* pexitMenu = CCMenu::create(pexitItem, NULL);
     pexitMenu->setPosition(CCPointZero);
 	this->addChild(pexitMenu);
 	if(turnonmusic1==true)
@@ -129,7 +129,7 @@ void startgame::showplayer()
 		}
 	}
 }
-void startgame::update(ccTime dt)
+void startgame::update(float delta)
 {
 	cmm=cmm1;
 	nowtime+=1;
@@ -152,10 +152,10 @@ void startgame::showtime()
 		else
 			zerolabel="";
 		CCSize timelabelsize=CCSize(200,40);
-		CCSprite* timelabel=CCSprite::spriteWithFile("image\\form\\time_label.png");
+		CCSprite* timelabel = CCSprite::create("image\\form\\time_label.png");
 		timelabel->setPosition(ccp(705,530));
 		this->addChild(timelabel);
-		CCLabelTTF*	minute_label = CCLabelTTF::labelWithString((inttostr(minute)+":"+zerolabel+inttostr(second-minute*60)).c_str(),timelabelsize,CCTextAlignmentLeft,"arial",40);
+		CCLabelTTF*	minute_label = CCLabelTTF::create((inttostr(minute) + ":" + zerolabel + inttostr(second - minute * 60)).c_str(), "arial", 40, timelabelsize, TextHAlignment::LEFT);
 		this->removeChild(minute_label,true);
 		minute_label->setPosition(ccp(745,530));
 		this->addChild(minute_label);
@@ -228,7 +228,7 @@ userlabel::userlabel(string pn,int pm,int num)
 void userlabel::showlabel()
 {
 	//设置主界面
-	CCSprite* proomMain=CCSprite::spriteWithFile("image\\form\\userlabel_main.png");
+	CCSprite* proomMain = CCSprite::create("image\\form\\userlabel_main.png");
 	//设定主界面显示位置并添加入layer中
     proomMain->setPosition(ccp(87,24));
 	this->addChild(proomMain);
@@ -236,10 +236,10 @@ void userlabel::showlabel()
 void userlabel::showhead()
 {
 	CCSize mysize=CCSize(104,17);
-	CCLabelTTF*	namelabel = CCLabelTTF::labelWithString(playername.c_str(),mysize,CCTextAlignmentLeft,"arial",14);
+	CCLabelTTF*	namelabel = CCLabelTTF::create(playername.c_str(), "arial", 14, mysize, TextHAlignment::LEFT);
 	namelabel->setPosition(ccp(140,24));
 	this->addChild(namelabel);
-	CCSprite* pm=CCSprite::spriteWithFile(("image\\player\\"+inttostr(playermod)+"\\down1.png").c_str(),CCRectMake(30,45,40,40));
+	CCSprite* pm = CCSprite::create(("image\\player\\" + inttostr(playermod) + "\\down1.png").c_str(), CCRectMake(30, 45, 40, 40));
 	pm->setPosition(ccp(60,24));
 	this->addChild(pm);
 }

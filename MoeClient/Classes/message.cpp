@@ -25,23 +25,23 @@ message::message(string inmsg,int inX,int inY)
 }
 void message::showmessage()
 {
-	CCSprite* pmsgMain=CCSprite::spriteWithFile("image\\form\\message.png");
+	CCSprite* pmsgMain=CCSprite::create("image\\form\\message.png");
 	//设定主界面显示位置并添加入layer中
     pmsgMain->setPosition(ccp(X,Y));
 	this->addChild(pmsgMain);
 	//创建关闭按钮图片
-	CCMenuItemImage *pmsgCloseItem=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pmsgCloseItem=CCMenuItemImage::create(
 		"image\\button\\message_close.png","image\\button\\message_close_selected.png",this,menu_selector(message::menuCloseCallback));
 	//设置关闭按钮位置
 	pmsgCloseItem->setPosition(ccp(X-4,Y-133));
 	//添加菜单至界面中
-	CCMenu* pmsgCloseMenu = CCMenu::menuWithItems(pmsgCloseItem, NULL);
+	CCMenu* pmsgCloseMenu = CCMenu::create(pmsgCloseItem, NULL);
     pmsgCloseMenu->setPosition(CCPointZero);
     this->addChild(pmsgCloseMenu);
 	//设置提示信息框大小
 	CCSize mysize=CCSize(300,200);
 	//初始化提示信息框
-	CCLabelTTF* pLabel = CCLabelTTF::labelWithString(msg.c_str(),mysize,CCTextAlignmentLeft,"Thonburi",14);
+	CCLabelTTF* pLabel = CCLabelTTF::create(msg.c_str(), "Thonburi", 14, mysize, TextHAlignment::LEFT);
 	//设置提示信息框位置
 	pLabel->setPosition(ccp(X,Y+80));
 	this->addChild(pLabel);

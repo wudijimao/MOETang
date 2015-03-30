@@ -68,24 +68,24 @@ bool login::init()
         //////////////////////////////////////////////////////////////////////////
         // add your codes below...
 		//创建离开按钮图片
-		CCMenuItemImage *pLoginExitItem=CCMenuItemImage::itemFromNormalImage(
+		CCMenuItemImage *pLoginExitItem=CCMenuItemImage::create(
 			"image\\button\\login_exit.png","image\\button\\login_exit_selected.png",this,menu_selector(login::menuCloseCallback));
 		CC_BREAK_IF(! pLoginExitItem);
 		//设置离开按钮位置
 		pLoginExitItem->setPosition(ccp(731,212));
 		//添加菜单至界面中
-		CCMenu* pLoginExitMenu = CCMenu::menuWithItems(pLoginExitItem, NULL);
+		CCMenu* pLoginExitMenu = CCMenu::create(pLoginExitItem, NULL);
         pLoginExitMenu->setPosition(CCPointZero);
         CC_BREAK_IF(! pLoginExitMenu);
         this->addChild(pLoginExitMenu, 1);
 		//创建登录按钮图片
-		CCMenuItemImage *pLoginLoginItem=CCMenuItemImage::itemFromNormalImage(
+		CCMenuItemImage *pLoginLoginItem = CCMenuItemImage::create(
 			"image\\button\\login_login.png","image\\button\\login_login_selected.png",this,menu_selector(login::menulogin));
 		CC_BREAK_IF(! pLoginLoginItem);
 		//设置登录按钮位置
 		pLoginLoginItem->setPosition(ccp(665,212));
 		//添加菜单至界面中
-		CCMenu* pLoginLoginMenu = CCMenu::menuWithItems(pLoginLoginItem, NULL);
+		CCMenu* pLoginLoginMenu = CCMenu::create(pLoginLoginItem, NULL);
         pLoginLoginMenu->setPosition(CCPointZero);
         CC_BREAK_IF(! pLoginLoginMenu);
         this->addChild(pLoginLoginMenu, 2);
@@ -98,12 +98,12 @@ bool login::init()
 		//设定输入框文字大小
 		float font_size=25;
 		//初始化QQ号输入框
-		pLoginQQInput=CCTextFieldTTF::textFieldWithPlaceHolder("",Inputsize,CCTextAlignmentLeft,font_family,font_size);
+		pLoginQQInput = CCTextFieldTTF::textFieldWithPlaceHolder("", Inputsize, TextHAlignment::LEFT, font_family, font_size);
 		pLoginQQInput->setColor(mycolor);
-		CCMenuItemImage *pLoginQQItem=CCMenuItemImage::itemFromNormalImage(
+		CCMenuItemImage *pLoginQQItem = CCMenuItemImage::create(
 			"image\\others\\Input.png","image\\others\\Input.png",this,menu_selector(login::chooseQQ));
 		pLoginQQItem->setPosition(ccp(640,370));
-		CCMenu* pQQItemMenu = CCMenu::menuWithItems(pLoginQQItem, NULL);
+		CCMenu* pQQItemMenu = CCMenu::create(pLoginQQItem, NULL);
         pQQItemMenu->setPosition(CCPointZero);
         this->addChild(pQQItemMenu);
 		//设定QQ号输入框位置，获取焦点并添入界面中
@@ -111,19 +111,19 @@ bool login::init()
 		pLoginQQInput->attachWithIME();
 		this->addChild(pLoginQQInput,3);
 		//初始化密码输入框
-		pLoginPWInput=CCTextFieldTTF::textFieldWithPlaceHolder("",Inputsize,CCTextAlignmentLeft,font_family,font_size);
+		pLoginPWInput = CCTextFieldTTF::textFieldWithPlaceHolder("", Inputsize, TextHAlignment::LEFT, font_family, font_size);
 		pLoginPWInput->setColor(mycolor);
 		//设定密码输入框位置，添入界面中
-		CCMenuItemImage *pLoginPWItem=CCMenuItemImage::itemFromNormalImage(
+		CCMenuItemImage *pLoginPWItem = CCMenuItemImage::create(
 			"image\\others\\Input.png","image\\others\\Input.png",this,menu_selector(login::choosePW));
-		CCMenu* pPWItemMenu = CCMenu::menuWithItems(pLoginPWItem, NULL);
+		CCMenu* pPWItemMenu = CCMenu::create(pLoginPWItem, NULL);
         pPWItemMenu->setPosition(CCPointZero);
         this->addChild(pPWItemMenu);
 		pLoginPWItem->setPosition(ccp(640,325));
 		pLoginPWInput->setPosition(ccp(640,325));
 		this->addChild(pLoginPWInput,4);
 		//创建主界面
-		CCSprite* pLoginMain=CCSprite::spriteWithFile("image\\form\\login_main.png");
+		CCSprite* pLoginMain = CCSprite::create("image\\form\\login_main.png");
         CC_BREAK_IF(! pLoginMain);
 		//设置主界面位置
         pLoginMain->setPosition(ccp(400,300));
@@ -207,15 +207,15 @@ void login::showconview()
 {
 	///有错误，未解决
 	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("sound\\uiLeave.wav");
-	pConView=CCSprite::spriteWithFile("image\\form\\login_con.png");
+	pConView = CCSprite::create("image\\form\\login_con.png");
     pConView->setPosition(ccp(400,300));
 	this->addChild(pConView);
-	CCMenuItemImage *pLoginConItem=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pLoginConItem = CCMenuItemImage::create(
 		"image\\button\\login_con_close.png","image\\button\\login_con_close_selected.png",this,menu_selector(login::closeconview));
 	//设置关闭按钮位置
 	pLoginConItem->setPosition(ccp(400,273));
 	//添加菜单至界面中
-	pLoginConClose = CCMenu::menuWithItems(pLoginConItem, NULL);
+	pLoginConClose = CCMenu::create(pLoginConItem, NULL);
     pLoginConClose->setPosition(CCPointZero);
     this->addChild(pLoginConClose);
 }

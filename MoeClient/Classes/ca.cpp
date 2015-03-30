@@ -14,7 +14,7 @@ ca::ca(bool m,bool s,HallServerWorkload inhsw)
 void ca::showca()
 {
 	//设置主界面
-	CCSprite* pcaMain=CCSprite::spriteWithFile("image\\form\\ca_main.png");
+	CCSprite* pcaMain = CCSprite::create("image\\form\\ca_main.png");
 	//设定主界面显示位置并添加入layer中
     pcaMain->setPosition(ccp(400,300));
 	this->addChild(pcaMain);
@@ -22,21 +22,21 @@ void ca::showca()
 	if(turnonmusic1==true)
 		CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("music\\das.mp3", true);
 	//创建退出按钮图片
-	CCMenuItemImage *pcaExitItem=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pcaExitItem=CCMenuItemImage::create(
 		"image\\button\\ca_exit.png","image\\button\\ca_exit_selected.png",this,menu_selector(ca::menuCloseCallback));
 	//设置退出按钮位置
 	pcaExitItem->setPosition(ccp(743,56));
 	//添加菜单至界面中
-	CCMenu* pcaExitMenu = CCMenu::menuWithItems(pcaExitItem, NULL);
+	CCMenu* pcaExitMenu = CCMenu::create(pcaExitItem, NULL);
     pcaExitMenu->setPosition(CCPointZero);
     this->addChild(pcaExitMenu);
 	//创建系统设置按钮图片
-	CCMenuItemImage *pcaOptionItem=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pcaOptionItem=CCMenuItemImage::create(
 		"image\\button\\ca_option.png","image\\button\\ca_option_selected.png",this,menu_selector(ca::ShowOptionMenu));
 	//设置系统设置按钮位置
 	pcaOptionItem->setPosition(ccp(602,59));
 	//添加菜单至界面中
-	CCMenu* pcaOptionMenu = CCMenu::menuWithItems(pcaOptionItem, NULL);
+	CCMenu* pcaOptionMenu = CCMenu::create(pcaOptionItem, NULL);
     pcaOptionMenu->setPosition(CCPointZero);
     this->addChild(pcaOptionMenu);
 	showbutton4();
@@ -46,7 +46,7 @@ void ca::showclick()
 	for(int i=0;i<hsw.serverNum;++i)
 	{
 		//点击按钮
-		pcachooseItem[i]=CCMenuItemImage::itemFromNormalImage(
+		pcachooseItem[i] = CCMenuItemImage::create(
 		"image\\others\\choosearea.png","image\\others\\choosearea.png",this,menu_selector(ca::Showmsg));
 		//设置按钮位置
 		if(i%2!=0){
@@ -55,7 +55,7 @@ void ca::showclick()
 			if(hsw.workload[i]!=100)
 				//wordload框位置
 			for(int j=0;j<=hsw.workload[i]/20;j++){
-				delay[i][j] =CCSprite::spriteWithFile("image\\others\\delay.png",CCRectMake((float)j*10, 0, 10, 16) );
+				delay[i][j] = CCSprite::create("image\\others\\delay.png", CCRectMake((float)j * 10, 0, 10, 16));
 				delay[i][j]->setPosition( ccp(476+198+10+j*13,489-(i-1)/2*29) );
 				this->addChild(delay[i][j]);
 			}
@@ -65,13 +65,13 @@ void ca::showclick()
 				//wordload框位置
 			if(hsw.workload[i]!=100)
 			for(int j=0;j<=hsw.workload[i]/20;j++){
-				delay[i][j] =CCSprite::spriteWithFile("image\\others\\delay.png",CCRectMake((float)j*10, 0, 10, 16) );
+				delay[i][j] = CCSprite::create("image\\others\\delay.png", CCRectMake((float)j * 10, 0, 10, 16));
 				delay[i][j]->setPosition(ccp(476+10+j*13,489-i/2*29));
 				this->addChild(delay[i][j]);
 			}
 		}
 		//添加菜单至界面中
-		pcachooseMenu[i] = CCMenu::menuWithItems(pcachooseItem[i], NULL);
+		pcachooseMenu[i] = CCMenu::create(pcachooseItem[i], NULL);
 		(pcachooseMenu[i])->setPosition(CCPointZero);
 		this->addChild(pcachooseMenu[i]);
 	}
@@ -196,33 +196,33 @@ void ca::showbutton4()
 {
 	
 	//创建打开音效按钮图片
-	CCMenuItemImage *pItem1=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pItem1 = CCMenuItemImage::create(
 		"image\\button\\turnonsound.png","image\\button\\turnonsound_selected.png",this,menu_selector(ca::ShowMenu1));
 	//设置按钮位置
 	pItem1->setPosition(ccp(405,59));
 	//添加菜单至界面中
-	CCMenu* pMenu1 = CCMenu::menuWithItems(pItem1, NULL);
+	CCMenu* pMenu1 = CCMenu::create(pItem1, NULL);
     pMenu1->setPosition(CCPointZero);
     this->addChild(pMenu1);
 
-	CCMenuItemImage *pItem2=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pItem2 = CCMenuItemImage::create(
 		"image\\button\\turnoffsound.png","image\\button\\turnoffsound_selected.png",this,menu_selector(ca::ShowMenu2));
 	pItem2->setPosition(ccp(471,59));
-	CCMenu* pMenu2 = CCMenu::menuWithItems(pItem2, NULL);
+	CCMenu* pMenu2 = CCMenu::create(pItem2, NULL);
     pMenu2->setPosition(CCPointZero);
     this->addChild(pMenu2);
 
-	CCMenuItemImage *pItem3=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pItem3 = CCMenuItemImage::create(
 		"image\\button\\turnonmusic.png","image\\button\\turnonmusic_selected.png",this,menu_selector(ca::ShowMenu3));
 	pItem3->setPosition(ccp(535,59));
-	CCMenu* pMenu3 = CCMenu::menuWithItems(pItem3, NULL);
+	CCMenu* pMenu3 = CCMenu::create(pItem3, NULL);
     pMenu3->setPosition(CCPointZero);
     this->addChild(pMenu3);
 
-	CCMenuItemImage *pItem4=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pItem4 = CCMenuItemImage::create(
 		"image\\button\\turnoffmusic.png","image\\button\\turnoffmusic_selected.png",this,menu_selector(ca::ShowMenu4));
 	pItem4->setPosition(ccp(602,59));
-	CCMenu* pMenu4 = CCMenu::menuWithItems(pItem4, NULL);
+	CCMenu* pMenu4 = CCMenu::create(pItem4, NULL);
     pMenu4->setPosition(CCPointZero);
     this->addChild(pMenu4);
 }

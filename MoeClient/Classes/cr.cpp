@@ -25,7 +25,7 @@ cr::cr(HouseSimpleMessage inhsm,HallServerWorkload inhsw,int inarea)
 void cr::showcr()
 {
 	//设置主界面
-	CCSprite* pcrMain=CCSprite::spriteWithFile("image\\form\\cr_main.png");
+	CCSprite* pcrMain = CCSprite::create("image\\form\\cr_main.png");
 	//设定主界面显示位置并添加入layer中
     pcrMain->setPosition(ccp(400,300));
 	this->addChild(pcrMain);
@@ -61,7 +61,7 @@ void cr::addroom()
 	for(int i=0;i<8;i++)
 	{
 		//添加按钮以接收点击信息
-		pcrchooseItem[i]=CCMenuItemImage::itemFromNormalImage(
+		pcrchooseItem[i] = CCMenuItemImage::create(
 		"image\\others\\chooseroom.png","image\\others\\chooseroom.png",this,menu_selector(cr::chooseroom));
 		//按奇偶顺序左右添加房间
 		if(i%2!=0)
@@ -93,7 +93,7 @@ void cr::addroom()
 			this->addChild(myroom[i]);
 		}
 		//将按钮作为菜单添加到LAYER中
-		pcrchooseMenu[i] = CCMenu::menuWithItems(pcrchooseItem[i], NULL);
+		pcrchooseMenu[i] = CCMenu::create(pcrchooseItem[i], NULL);
 		(pcrchooseMenu[i])->setPosition(CCPointZero);
 		this->addChild(pcrchooseMenu[i]);
 	}
@@ -102,34 +102,34 @@ void cr::addroom()
 void cr::showpage()
 {
 	//创建左翻页按钮图片
-	CCMenuItemImage *pleftpageimg=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pleftpageimg = CCMenuItemImage::create(
 		"image\\button\\cr_leftpage.png","image\\button\\cr_leftpage_selected.png","image\\button\\cr_leftpage_disabled.png",this,menu_selector(cr::leftpageclick));
 	//设置左翻页按钮位置
 	pleftpageimg->setPosition(ccp(348,30));
 	//添加菜单至界面中
-	CCMenu* pleftpagemenu = CCMenu::menuWithItems(pleftpageimg, NULL);
+	CCMenu* pleftpagemenu = CCMenu::create(pleftpageimg, NULL);
     pleftpagemenu->setPosition(CCPointZero);
     this->addChild(pleftpagemenu);
 
 	//创建右翻页按钮图片
-	CCMenuItemImage *prightpageimg=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *prightpageimg = CCMenuItemImage::create(
 		"image\\button\\cr_rightpage.png","image\\button\\cr_rightpage_selected.png","image\\button\\cr_rightpage_disabled.png",this,menu_selector(cr::rightpageclick));
 	//设置右翻页按钮位置
 	prightpageimg->setPosition(ccp(383,30));
 	//添加菜单至界面中
-	CCMenu* prightpagemenu = CCMenu::menuWithItems(prightpageimg, NULL);
+	CCMenu* prightpagemenu = CCMenu::create(prightpageimg, NULL);
     prightpagemenu->setPosition(CCPointZero);
     this->addChild(prightpagemenu);
 
 	if(page==0)
-		pleftpageimg->setIsEnabled(false);
+		pleftpageimg->setEnabled(false);
 	if(roomnum-page*8<8)
-		prightpageimg->setIsEnabled(false);
+		prightpageimg->setEnabled(false);
 }
 //显示上部横条
 void cr::showad()
 {
-	CCSprite* pcrad=CCSprite::spriteWithFile("image\\form\\ad.png");
+	CCSprite* pcrad = CCSprite::create("image\\form\\ad.png");
 	//设定主界面显示位置并添加入layer中
     pcrad->setPosition(ccp(400,565));
 	this->addChild(pcrad);
@@ -139,51 +139,51 @@ void cr::showad()
 void cr::showbutton5()
 {
 	//创建新手练习按钮
-	CCMenuItemImage *pntItem=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pntItem = CCMenuItemImage::create(
 		"image\\button\\cr_newgame.png","image\\button\\cr_newgame_selected.png",this,menu_selector(cr::newtestclick));
 	//设置新手练习按钮位置
 	pntItem->setPosition(ccp(531,33));
 	//添加菜单至界面中
-	CCMenu* pntMenu = CCMenu::menuWithItems(pntItem, NULL);
+	CCMenu* pntMenu = CCMenu::create(pntItem, NULL);
     pntMenu->setPosition(CCPointZero);
     this->addChild(pntMenu);
 	//创建快速加入按钮
-	CCMenuItemImage *pfjItem=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pfjItem = CCMenuItemImage::create(
 		"image\\button\\cr_fastjoin.png","image\\button\\cr_fastjoin_selected.png",this,menu_selector(cr::fastjoinclick));
 	//设置快速加入按钮位置
 	pfjItem->setPosition(ccp(586,33));
 	//添加菜单至界面中
-	CCMenu* pfjMenu = CCMenu::menuWithItems(pfjItem, NULL);
+	CCMenu* pfjMenu = CCMenu::create(pfjItem, NULL);
     pfjMenu->setPosition(CCPointZero);
     this->addChild(pfjMenu);
 
 	//创建创建房间按钮
-	CCMenuItemImage *pcrItem=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pcrItem = CCMenuItemImage::create(
 		"image\\button\\cr_createroom.png","image\\button\\cr_createroom_selected.png",this,menu_selector(cr::createroomclick));
 	//设置创建房间按钮位置
 	pcrItem->setPosition(ccp(641,33));
 	//添加菜单至界面中
-	CCMenu* pcrMenu = CCMenu::menuWithItems(pcrItem, NULL);
+	CCMenu* pcrMenu = CCMenu::create(pcrItem, NULL);
     pcrMenu->setPosition(CCPointZero);
     this->addChild(pcrMenu);
 
 	//创建个人信息按钮
-	CCMenuItemImage *puiItem=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *puiItem = CCMenuItemImage::create(
 		"image\\button\\cr_userinfo.png","image\\button\\cr_userinfo_selected.png",this,menu_selector(cr::userinfoclick));
 	//设置个人信息按钮位置
 	puiItem->setPosition(ccp(696,33));
 	//添加菜单至界面中
-	CCMenu* puiMenu = CCMenu::menuWithItems(puiItem, NULL);
+	CCMenu* puiMenu = CCMenu::create(puiItem, NULL);
     puiMenu->setPosition(CCPointZero);
     this->addChild(puiMenu);
 
 	//创建退出按钮
-	CCMenuItemImage *pexitItem=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pexitItem = CCMenuItemImage::create(
 		"image\\button\\ca_exit.png","image\\button\\ca_exit_selected.png",this,menu_selector(cr::menuCloseCallback));
 	//设置退出按钮位置
 	pexitItem->setPosition(ccp(761,33));
 	//添加菜单至界面中
-	CCMenu* pexitMenu = CCMenu::menuWithItems(pexitItem, NULL);
+	CCMenu* pexitMenu = CCMenu::create(pexitItem, NULL);
     pexitMenu->setPosition(CCPointZero);
     this->addChild(pexitMenu);
 
@@ -493,7 +493,7 @@ void cr::chooseroom(CCObject* pSender)
 
 }
 //每帧时调用
-void cr::update(ccTime dt)
+void cr::update(float delta)
 {
 	time1++;
 	//每3秒刷新房间列表
@@ -534,13 +534,13 @@ room::room(int inX,int inY,int inroomID,int inroomclass,char inroomname[],int in
 void room::showroom()
 {
 	if(roomID==-1){
-		CCSprite* proomMain=CCSprite::spriteWithFile("image\\form\\room_empty.png");
+		CCSprite* proomMain = CCSprite::create("image\\form\\room_empty.png");
 		//设定主界面显示位置并添加入layer中
 		proomMain->setPosition(ccp(X,Y));
 		this->addChild(proomMain);
 		return;
 	}
-	CCSprite* proomMain=CCSprite::spriteWithFile("image\\form\\room.png");
+	CCSprite* proomMain = CCSprite::create("image\\form\\room.png");
 	//设定主界面显示位置并添加入layer中
     proomMain->setPosition(ccp(X,Y));
 	this->addChild(proomMain);
@@ -548,7 +548,7 @@ void room::showroom()
 	//设置房间编号LABEL大小
 	CCSize roomIDsize=CCSize(40,18);
 	//初始化房间编号LABEL
-	CCLabelTTF* proomID = CCLabelTTF::labelWithString(inttostr(roomID).c_str(),roomIDsize,CCTextAlignmentLeft,"tahoma",18);
+	CCLabelTTF* proomID = CCLabelTTF::create(inttostr(roomID).c_str(), "tahoma", 18, roomIDsize, TextHAlignment::LEFT);
 	//设置房间编号LABEL位置并添入
 	proomID->setPosition(ccp(X-88+25+10,Y+53-5-8));
 	this->addChild(proomID);
@@ -556,32 +556,32 @@ void room::showroom()
 	//设置房间名称LABEL大小
 	CCSize roomnamesize=CCSize(40,15);
 	//初始化房间名称LABEL
-	CCLabelTTF* proomname = CCLabelTTF::labelWithString(roomname.c_str(),roomnamesize,CCTextAlignmentLeft,"arial",14);
+	CCLabelTTF* proomname = CCLabelTTF::create(roomname.c_str(), "arial", 14, roomnamesize, TextHAlignment::LEFT);
 	//设置房间名称LABEL位置并添入
 	proomname->setPosition(ccp(X-88+63+20,Y+53-15-7));
 	this->addChild(proomname);
 	//初始化房间类别LABEL
-	CCLabelTTF* proomclassname = CCLabelTTF::labelWithString(roomname.c_str(),roomnamesize,CCTextAlignmentLeft,"arial",14);
+	CCLabelTTF* proomclassname = CCLabelTTF::create(roomname.c_str(), "arial", 14, roomnamesize, TextHAlignment::LEFT);
 	//设置房间类别LABEL位置并添入
 	proomclassname->setPosition(ccp(X-88+63+20,Y+53-40-7));
 	this->addChild(proomclassname);
 	//设置当前玩家数LABEL大小
 	CCSize usernumsize=CCSize(20,25);
 	//初始化房间编号LABEL
-	CCLabelTTF* pnowusernum = CCLabelTTF::labelWithString(inttostr(nowusernum).c_str(),usernumsize,CCTextAlignmentLeft,"tahoma",25);
+	CCLabelTTF* pnowusernum = CCLabelTTF::create(inttostr(nowusernum).c_str(), "tahoma", 25, usernumsize, TextHAlignment::LEFT);
 	//设置当前玩家数LABEL位置并添入
 	pnowusernum->setPosition(ccp(X-88+60+10,Y+53-70-7));
 	this->addChild(pnowusernum);
-	CCLabelTTF* ptemp = CCLabelTTF::labelWithString("/",usernumsize,CCTextAlignmentLeft,"tahoma",25);
+	CCLabelTTF* ptemp = CCLabelTTF::create("/", "tahoma", 25, usernumsize, TextHAlignment::LEFT);
 	ptemp->setPosition(ccp(X-88+72+10,Y+53-70-7));
 	this->addChild(ptemp);
 	//初始化最大玩家数LABEL
-	CCLabelTTF* pmaxusernum = CCLabelTTF::labelWithString(inttostr(maxusernum).c_str(),usernumsize,CCTextAlignmentLeft,"tahoma",25);
+	CCLabelTTF* pmaxusernum = CCLabelTTF::create(inttostr(maxusernum).c_str(), "tahoma", 25, usernumsize, TextHAlignment::LEFT);
 	//设置房间编号LABEL位置并添入
 	pmaxusernum->setPosition(ccp(X-88+80+10,Y+53-70-7));
 	this->addChild(pmaxusernum);
 	//加载房间类别图片
-	CCSprite* proomclassimg = CCSprite::spriteWithFile("image\\roomclass\\001.png");
+	CCSprite* proomclassimg = CCSprite::create("image\\roomclass\\001.png");
 	//设置图片显示位置
 	proomclassimg->setPosition( ccp(X-88+5+25,Y+53-40-25) );
 	this->addChild(proomclassimg);

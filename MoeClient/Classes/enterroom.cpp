@@ -43,7 +43,7 @@ enterroom::enterroom(bool host,oneHouseMessage inohm,ServerMessage insm)
 void enterroom::showroom()
 {
 	//设置主界面
-	CCSprite* proomMain=CCSprite::spriteWithFile("image\\form\\enterroom_main.png");
+	CCSprite* proomMain=CCSprite::create("image\\form\\enterroom_main.png");
 	//设定主界面显示位置并添加入layer中
     proomMain->setPosition(ccp(400,300));
 	this->addChild(proomMain);
@@ -65,13 +65,13 @@ void enterroom::showplayername()
 				continue;
 		if(i<4)
 		{
-			playername[i] = CCLabelTTF::labelWithString(playernamestr[i].c_str(),mysize,CCTextAlignmentLeft,"arial",14);
+			playername[i] = CCLabelTTF::create(playernamestr[i].c_str(), "arial", 14, mysize, TextHAlignment::LEFT);
 			playername[i]->setPosition(ccp(125*i+75,600-90));
 			this->addChild(playername[i]);
 		}
 		else
 		{
-			playername[i] = CCLabelTTF::labelWithString(playernamestr[i].c_str(),mysize,CCTextAlignmentLeft,"arial",14);
+			playername[i] = CCLabelTTF::create(playernamestr[i].c_str(), "arial", 14, mysize, TextHAlignment::LEFT);
 			playername[i]->setPosition(ccp(125*(i-4)+75,600-460));
 			this->addChild(playername[i]);
 		}
@@ -85,7 +85,7 @@ void enterroom::showplayers()
 		if(isnoservertest==false)
 			if(ohm.position[i]==0)
 				continue;
-		player[i]=CCSprite::spriteWithFile(("image\\player\\"+inttostr(playerbody[i])+"\\down1.png").c_str());
+		player[i] = CCSprite::create(("image\\player\\" + inttostr(playerbody[i]) + "\\down1.png").c_str());
 		if(i<4)
 			player[i]->setPosition(ccp(125*i+75,600-90-50));
 		else
@@ -97,33 +97,33 @@ void enterroom::showplayers()
 void enterroom::showbutton()
 {
 	//创建开始按钮图片
-	CCMenuItemImage *pstartItem=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pstartItem = CCMenuItemImage::create(
 		"image\\button\\enterroom_start.png","image\\button\\enterroom_start_selected.png","image\\button\\enterroom_start_disable.png",this,menu_selector(enterroom::start));
 	//设置开始按钮位置
 	if(ishost==false)
-		pstartItem->setIsEnabled(false);
+		pstartItem->setEnabled(false);
 	pstartItem->setPosition(ccp(600,45));
 	//添加菜单至界面中
-	CCMenu* pstartMenu = CCMenu::menuWithItems(pstartItem, NULL);
+	CCMenu* pstartMenu = CCMenu::create(pstartItem, NULL);
     pstartMenu->setPosition(CCPointZero);
     this->addChild(pstartMenu);
 	//创建退出按钮图片
-	CCMenuItemImage *pexitItem=CCMenuItemImage::itemFromNormalImage(
+	CCMenuItemImage *pexitItem = CCMenuItemImage::create(
 		"image\\button\\ca_exit.png","image\\button\\ca_exit_selected.png",this,menu_selector(enterroom::exitgame));
 	//设置退出按钮位置
 	pexitItem->setPosition(ccp(740,45));
 	//添加菜单至界面中
-	CCMenu* pexitMenu = CCMenu::menuWithItems(pexitItem, NULL);
+	CCMenu* pexitMenu = CCMenu::create(pexitItem, NULL);
     pexitMenu->setPosition(CCPointZero);
     this->addChild(pexitMenu);
 	//房间名称及房间号显示
 	CCSize roomdirsize=CCSize(104,17);
-	CCLabelTTF* roomdir=CCLabelTTF::labelWithString((inttostr(roomnum)+"    "+roomname).c_str(),roomdirsize,CCTextAlignmentLeft,"arial",15);
+	CCLabelTTF* roomdir = CCLabelTTF::create((inttostr(roomnum) + "    " + roomname).c_str(), "arial", 15, roomdirsize, TextHAlignment::LEFT);
 	roomdir->setPosition(ccp(100,600-52));
 	this->addChild(roomdir);
 	//房间名称提示
 	CCSize roomnamesize=CCSize(160,23);
-	CCLabelTTF* roomnamestr=CCLabelTTF::labelWithString("room name:",roomnamesize,CCTextAlignmentLeft,"arial",20);
+	CCLabelTTF* roomnamestr = CCLabelTTF::create("room name:", "arial", 20, roomnamesize, TextHAlignment::LEFT);
 	roomnamestr->setPosition(ccp(610,600-295));
 	this->addChild(roomnamestr);
 	//设定输入框大小
@@ -136,23 +136,23 @@ void enterroom::showbutton()
 	float font_size=25;
 	//初始化房间名称输入框
 	if(ishost==false){
-		CCLabelTTF* roomnameshow=CCLabelTTF::labelWithString(roomname.c_str(),Inputsize,CCTextAlignmentLeft,"arial",font_size);
+		CCLabelTTF* roomnameshow = CCLabelTTF::create(roomname.c_str(), "arial", font_size, Inputsize, TextHAlignment::LEFT);
 		roomnameshow->setPosition(ccp(640,600-325));
 		this->addChild(roomnameshow);
 	}
 	else{
-		roomnameinput=CCTextFieldTTF::textFieldWithPlaceHolder(roomname.c_str(),Inputsize,CCTextAlignmentLeft,font_family,font_size);
+		roomnameinput = CCTextFieldTTF::textFieldWithPlaceHolder(roomname.c_str(), Inputsize, TextHAlignment::LEFT, font_family, font_size);
 		roomnameinput->setColor(mycolor);
 		roomnameinput->setPosition(ccp(640,600-325));
 		roomnameinput->attachWithIME();
 		this->addChild(roomnameinput);
 		//设定确定按钮位置
-		CCMenuItemImage *penterItem=CCMenuItemImage::itemFromNormalImage(
+		CCMenuItemImage *penterItem = CCMenuItemImage::create(
 			"image\\button\\determine.png","image\\button\\determine_selected.png",this,menu_selector(enterroom::changeroomname));
 		//设置确定按钮位置
 		penterItem->setPosition(ccp(720,600-325));
 		//添加菜单至界面中
-		CCMenu* penterMenu = CCMenu::menuWithItems(penterItem, NULL);
+		CCMenu* penterMenu = CCMenu::create(penterItem, NULL);
 		penterMenu->setPosition(CCPointZero);
 		this->addChild(penterMenu);
 	}
@@ -243,7 +243,7 @@ void enterroom::exitgame(CCObject* pSender)
 	}
 }
 //每帧时调用
-void enterroom::update(ccTime dt)
+void enterroom::update(float delta)
 {
 	if(time!=10){time++;return;}
 	time=0;

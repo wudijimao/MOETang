@@ -36,7 +36,7 @@ public:
 	void showpage();
 	void showad();
 	void showbutton5();
-	void update(cocos2d::ccTime dt);
+	void update(float delta);
 	virtual void leftpageclick(cocos2d::CCObject* pSender);
 	virtual void rightpageclick(cocos2d::CCObject* pSender);
 

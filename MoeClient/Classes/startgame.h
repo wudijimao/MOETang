@@ -26,7 +26,7 @@ public:
 	startgame();
 	startgame(ServerMessage sm,ClientMapMessage incmm,oneHouseMessage inohm);
 	void showmain();
-	void update(cocos2d::ccTime dt);
+	void update(float delta);
 	void showtime();
 	void showpower();
 	void showmyself();
